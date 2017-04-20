@@ -4,12 +4,12 @@
 	<meta charset="UTF-8">
 	<title>实战2</title>
 	<link rel="stylesheet" type="text/css" href="css/15-2.css">
-	<link rel="stylesheet" type="text/css" href="css/font-awesome.min.css">
-  <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+		<link rel="stylesheet" type="text/css" href="./css/font-awesome.min.css">
   <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
   <link href='https://fonts.googleapis.com/css?family=Kaushan+Script' rel='stylesheet' type='text/css'>
   <link href='https://fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
   <link href='https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700' rel='stylesheet' type='text/css'>
+	
 </head>
 <body>
   <div id="title" class="clear">
@@ -55,8 +55,8 @@
       </div>
    </li>
 </ul>
-	<a href="##" class="btn-pre"><</a>
-	<a href="##" class="btn-next">></a>
+	<a href="###" class="btn-pre btn"><</a>
+	<a href="###" class="btn-next btn">></a>
 	<ul class="dot">
 		<li class="active"></li>
 		<li></li>
@@ -301,5 +301,15 @@
     <a href="#" class="links">Privacy Policy</a>
     <a href="#" class="links">Terms of Use</a>
   </div>
+	<div id="go-top" class="inactive">
+		<i class="fa fa-arrow-circle-up fa-4x"></i>
+	</div>
+	<script src="http://apps.bdimg.com/libs/jquery/1.9.1/jquery.js"></script>
+	<script src="rotation.js"></script>
+	<script src="gotop.js"></script>
+	<script>
+		$('#header').carousel(10000);
+		$('.main-services').gotop();
+	</script>
 </body>
 </html>

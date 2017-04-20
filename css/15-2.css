@@ -64,6 +64,11 @@ a {
 	width: 100%;
   height: 100%;
   background: cover;
+	overflow: hidden;
+}
+#header .img-ct {
+	position: absolute;
+	height: 100%;
 }
 #header .header-content {
 	position: relative;
@@ -76,8 +81,7 @@ a {
 	position: absolute;
 	left: 50%;
 	top: 50%;
-	transform: transparentY(-50%);
-	transform: transparentX(-50%);
+	transform: translate(-50%,-50%);
 }
 #header .header-content1 {
 	background: url(https://img.alicdn.com/imgextra/i2/1036020250/TB2OaZ7l9FjpuFjSszhXXaBuVXa_!!1036020250.jpg) no-repeat;
@@ -96,8 +100,6 @@ a {
 	background-size: 100% 100%;
 }
 #header .header-lists {
-  display: table-cell;
-  vertical-align: middle;
   color: white;
 }
 #header .header-lists h1 {
@@ -123,6 +125,51 @@ a {
 #header .header-lists a:hover {
   background: #fec503;
 }
+#header .btn {
+		position: absolute;
+		top: 50%;
+		transform: translateY(-50%);
+		display: inline-block;
+		width: 50px;
+		height: 50px;
+		line-height: 50px;
+		border-radius: 100%;
+		background: #666;
+		color: white;
+		text-align: center;
+		font-size: 20px;
+		display: none;
+	}
+#header .btn-pre {
+		left: 10px;
+	}
+#header .btn-next {
+		right: 10px;
+	}
+#header	.btn:hover {
+		opacity: 0.8;
+	}
+#header:hover .btn {
+		display: block;
+	}
+#header	.dot {
+		position: absolute;
+		left: 50%;
+		transform: translateX(-50%);
+		bottom: 10px;
+		cursor: pointer;
+	}
+#header .dot li{
+		float: left;
+		width: 80px;
+		height: 15px;
+		border-radius: 4px;
+		margin-right: 10px;
+		background: white;
+	}
+#header .dot li.active {
+		background: #222;
+	}
 /*main*/
 /*字体*/
 #main .main-title {
@@ -422,4 +469,16 @@ a {
 #footer .links:hover {
 	text-decoration: underline;
 	color: #FEC503;
+}
+#go-top {
+	position: fixed;
+	bottom: 20px;
+	right: 20px;
+	cursor: pointer;
+}
+#go-top .fa-arrow-circle-up {
+	color: #fed136;
+}
+.inactive {
+	display: none;
 }
