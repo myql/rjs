@@ -474,10 +474,15 @@ a {
 	position: fixed;
 	bottom: 20px;
 	right: 20px;
+	width: 55px;
+	height: 55px;
+	border-radius: 100%;
 	cursor: pointer;
+	background: white;
 }
 #go-top .fa-arrow-circle-up {
 	color: #fed136;
+	line-height: 55px;
 }
 .inactive {
 	display: none;
