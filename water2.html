@@ -1,0 +1,76 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>32</title>
+	<style>
+		* {
+			box-sizing: border-box;
+		}
+		html,body,ul,li {
+			margin: 0;
+			padding: 0;
+		}
+		ul {
+			position: relative;
+			margin: 0 auto;
+			width: 1000px;
+		}
+		li {
+			position: absolute;
+			margin:  10px;
+			list-style: none;
+			width: 300px;
+			border: 1px solid #ccc;
+		}
+		.item img{
+			margin: 10px;
+	        width: 260px;
+		}
+		.item .header{
+			height: 25px;
+			margin: 0 12px;
+			border-bottom: 1px solid #DBDBDB;
+		}
+		.desp{
+			font-size: 12px;
+			line-height: 1.8;
+			margin: 10px 15px 0;
+			color: #777371;
+		}
+		.hide{
+			display: none;
+		}
+	</style>
+</head>
+<body>
+<ul class="container">
+	<li class="item">
+    			<!-- <a href="#" class="link"> -->
+    				<!-- <img src="http://s.img.mix.sina.com.cn/auto/resize?img=http%3A%2F%2Fwww.sinaimg.cn%2Fdy%2Fslidenews%2F5_img%2F2016_09%2F453_75615_657883.jpg&size=250_0" alt=""> -->
+    			<!-- </a> -->
+    			<!-- <h4 class="header">标题</h4> -->
+    			<!-- <p class="desp"> -->
+    				<!-- 当地时间2016年3月1日，在东部与亲俄武装作战中受伤的乌克兰士兵接受海豚治疗。 -->
+    			<!-- </p> -->
+    		<!-- </li> -->
+	<li class="item hide"></li>
+</ul>
+<div id="load">加载更多</div>
+<script src="http://apps.bdimg.com/libs/jquery/1.9.1/jquery.js"></script>
+<script>
+var itemWidth=$('.item').width();
+var picWidth=$('#container').width();
+var num=parseInt(picWIdth/itemWIdth);
+	function waterFull(){
+		var i=0;
+		var sum=[];
+		for(i=0;i<num;i++){
+			sum[i]=0;
+		}
+		if()
+	}
+</script>
+</body>
+</html>
