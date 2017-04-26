@@ -1,0 +1,109 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title></title>
+	<style>
+		 #container { 
+			 position: relative;
+		} 
+		.item{
+			position: absolute;
+			width: 200px;
+			margin: 10px 10px 0 0;
+			boxing-size: border-box;
+			transition: all 1s;
+		}
+		.h1 {
+			height: 200px;
+			background: #F4B300;
+		}
+		.h2 {
+			height: 400px;
+			background: #006AC1;
+		}
+		.h3 {
+			height: 300px;
+			background: #691BBB;
+		}
+	</style>
+</head>
+<body>
+<div id="container">
+	<div class="item h1">1</div>
+	<div class="item h2">2</div>
+	<div class="item h1">3</div>
+	<div class="item h1">4</div>
+	<div class="item h1">5</div>
+	<div class="item h2">6</div>
+	<div class="item h2">7</div>
+	<div class="item h3">8</div>
+	<div class="item h1">9</div>
+	<div class="item h2">10</div>
+	<div class="item h2">11</div>
+	<div class="item h2">12</div>
+	<div class="item h3">13</div>
+	<div class="item h3">14</div>	
+</div>
+<script src="http://apps.bdimg.com/libs/jquery/1.9.1/jquery.js"></script>
+<script>
+(function(){
+function waterFall($ct){
+	this.$ct=$ct;
+	this.bind()
+	this.play()
+	this.init()
+}
+waterFall.prototype={
+	bind: function(){
+		$ct=this.$ct;
+		$ctList=this.$ctList=$ct.children();
+		this.ctWidth=$ctList.outerWidth(true);	
+	},
+	init: function(){
+	var _this=this;
+		$(window).on('resize',function(){
+			_this.play()
+	})
+	},
+	play: function(){
+		var _this=this;
+		this.initData();
+		this.$ctList.each(function(){
+		var $ct=$(this);
+		var idx=0,min=_this.sum[0]
+		var ctHeight=$ct.outerHeight(true);
+		for(var i=0;i<_this.sum.length;i++){
+			if(_this.sum[i]<min){
+				idx=i;
+				min=_this.sum[i];
+			}
+		}
+		$ct.css({
+			left: _this.ctWidth*idx,
+			top: min
+		})
+		_this.sum[idx]=_this.sum[idx]+ctHeight;
+	})
+},
+initData: function(){
+	this.windowWidth=$(window).width();
+			this.sum=[];
+			this.sum.length=parseInt(this.windowWidth/this.ctWidth);
+			this.$ct.width(this.sum.length*this.ctWidth)
+	for(var i=0;i<this.sum.length;i++){
+		this.sum[i]=0;
+	}
+}
+}
+$.fn.waterfall=function($ct){
+	this.each(function(){
+		new waterFall($(this));
+	})
+}
+})()
+$('#container').waterfall();
+</script>
+</body>
+</html>

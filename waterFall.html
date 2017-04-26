@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>1</title>
+	<style>
+		* {
+			margin: 0;
+			padding: 0;
+			box-sizing: border-box;
+		}
+		ul,li {
+			list-style: none;
+		}
+		#container {
+			position: relative;
+			margin: 0 auto;
+		}
+		#container>li {
+			position: absolute;
+			margin: 10px;
+			color: white;
+			width: 100px;
+			height: 100px;
+			background: red;
+			transition: all 1s;
+		}
+	</style>
+</head>
+<body>
+		<ul id="container">
+			<li>1</li>
+			<li>2</li>
+			<li>3</li>
+			<li>4</li>
+			<li>5</li>
+			<li>6</li>
+			<li>7</li>
+			<li>8</li>
+			<li>9</li>
+			<li>10</li>
+			<li>11</li>
+			<li>12</li>
+			<li>13</li>
+			<li>14</li>
+			<li>15</li>
+			<li>16</li>
+			<li>17</li>
+			<li>18</li>
+		</ul>
+<script src="http://apps.bdimg.com/libs/jquery/1.9.1/jquery.min.js"></script>
+<script src="waterfall.js"></script>
+<script>
+$('#container').waterfall();
+</script>
+</body>
+</html>
