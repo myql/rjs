@@ -77,19 +77,19 @@
 
 <script src="http://apps.bdimg.com/libs/jquery/1.9.1/jquery.min.js"></script>
 <script src="expourse.js"></script>
-<script src="waterfall.js"></script>
+<script src="waterfall1.js"></script>
 <script>
 
 var curPage = 1,
 	perPageCount = 30;
 
-$('#pic-ct').waterfall();
+WaterFall.init($('#pic-ct'));
 
 Exposure.init($('#load'),function(){
 	console.log('show')
 	getData(function(data){
 		var $nodes = renderData(data);
-		$nodes.parent().waterfall();
+		WaterFall.start($nodes);
 	});
 });
 

@@ -25,7 +25,7 @@
 			this.$items = this.$ct.find('.item');
 			if(this.$items.length ===0) return;
 			this.itemWidth = this.$items.outerWidth(true);
-			this.$ct.width('auto');
+			this.$ct.width('auto');//?
 			this.colNum = Math.floor( this.$ct.width() / this.itemWidth );
 			this.$ct.width(this.itemWidth*this.colNum);
 			if(this.arrColHeight.length === 0 || !$nodes){
