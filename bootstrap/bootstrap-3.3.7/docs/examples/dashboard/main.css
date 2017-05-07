@@ -25,16 +25,25 @@
 		.aside {
 			display: block;
 		}
+		.col-md-6 {
+			width: 50%;
+		}
 	}
 	@media (max-width: 768px) {
 		.aside {
 			display: none;
 		}
+		.col-sm-12 {
+			width: 100%;
+		}
+	}
+	.col-sm-12,.col-md-6 {
+		float: left;
 	}
 	.content>li {
 		height: 100%;
 	}
-	#section-1,#section-3,#section-4 {
+	#section-3 {
 		width: 100%;
 		height: 100%;
 		background: url(https://img.alicdn.com/imgextra/i4/1036020250/TB2HayAqYBmpuFjSZFuXXaG_XXa_!!1036020250.jpg) no-repeat;
@@ -55,26 +64,42 @@
 		z-index: 22;
 		width: 150px;
 		height: 100%;
-		background: #374d4b;
+		background: #272727;
 	}
-	.content {
+	.rows {
 		position: absolute;
 		left: 150px;
 		top: 0;
 		height: 100%;
 	} 
-	
-	#section-2 {
-		border: 1px solid red;
+	.content {
+		margin: 0 auto;
+		height: 100%;
 	}
-	#section-2  img{
+	#section-1 {
+		background: #ccc;
+	}
+	#section-1 h2{
+		font: bold 30px 'Microsoft Yahei';
+	}
+	.main-project>div {
+		position: relative;
+		margin-top: 20px;
+		padding-left: 1px;
+		font-size: 0;
+		border: 1px solid #fff;
+	}
+	#section-1 a.image-show {
+		display: inline-block;
+		width: 100%;		
+	}
+	#section-1  a.image-show img{
+		width: 100%;
 		height: 200px;
 	}
 	
-	.row>div:hover .cover{
-		display: block;
-	}
-	.row .cover {
+	
+	.main-project>div .cover {
 		position: absolute;
 		top: 0;
 		left: 0;
@@ -82,10 +107,13 @@
 		height: 100%;
 		background: rgba(0,0,0,0.5);
 	}
-	.row .cover:hover {
+	.main-project>div:hover .cover{
+		display: block;
+	}
+	.main-project .cover:hover {
 		cursor: pointer;
 	}
-	.row .cover-content {
+	.main-project .cover-content {
 		position: absolute;
 		left: 50%;
 		top: 50%;
@@ -101,7 +129,7 @@
 		top: 90%;
 		transition: all 0.3s;
 	}
-	.row>div:hover .des{
+	.main-project>div:hover .des{
 		top: 70%;
 	}
 	.sidebar{

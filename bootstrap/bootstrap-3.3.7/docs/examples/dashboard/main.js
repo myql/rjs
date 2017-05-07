@@ -1,23 +1,22 @@
 var $sideBar=$('.sidebar');
 var $rows=$('.rows');
-var $row=$('.row');
+var $row=$('.main-project');
 var $section2=$('#section-2');
 var $content=$('.content');
 $section2.height($row.height());
 function size(){
 	if($(window).width()>=768){
 		play();
-		var contentWidth=$(window).width()-$('.sidebar').width();
-		$('.content li').width(contentWidth);	
-		$('.row img').width(contentWidth);
-		$content.css({
+		var contentWidth=$(window).width()-$('.aside').width();
+		$rows.outerWidth(contentWidth);	
+		$rows.css({
 				left: '150px'
 			})		
 		
 	}
 	else if($(window).width()<768) {
-		$('.content li').width($(window).width())
-		$content.css({
+		$rows.width($(window).width())
+		$rows.css({
 				left: 0
 			})
 	}
@@ -36,5 +35,4 @@ function play(){
 })
 
 }
-
 

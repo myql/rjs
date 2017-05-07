@@ -3,10 +3,10 @@
 <head>
 <meta charset="UTF-8">
 <title>Bootstrap 附加导航（Affix）插件</title>
-<link rel="stylesheet" href="http://cdn.static.runoob.com/libs/bootstrap/3.3.7/css/bootstrap.min.css">
+<!-- <link rel="stylesheet" href="http://cdn.static.runoob.com/libs/bootstrap/3.3.7/css/bootstrap.min.css"> -->
 <link rel="stylesheet" href="main.css">
 <script src="http://cdn.static.runoob.com/libs/jquery/2.1.1/jquery.min.js"></script>
-<script src="http://cdn.static.runoob.com/libs/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<!-- <script src="http://cdn.static.runoob.com/libs/bootstrap/3.3.7/js/bootstrap.min.js"></script> -->
 </head>
 <body>
 <div class="containers">
@@ -24,28 +24,23 @@
     </div>
     <div class="collapse navbar-collapse" id="example-navbar-collapse">
         <ul class="nav navbar-nav">
-            <li class="active"><a href="#section-1">个人信息</a></li>
-            <li><a href="#section-2">作品</a></li>
-            <li> <a href="#section-3">技能</a></li>
-            <li> <a href="#section-4">联系方式</a></li>
+            <li class="active"><a href="#section-1">作品</a></li>
+            <li><a href="#section-2">技能</a></li>
+            <li> <a href="#section-3">个人信息</a></li>
         </ul>
     </div>
     </div>
 </nav>
  <div class="rows">
- 	<ul class="content">
-		<li id="section-1">
-			<p>1</p>
-		</li>
-		<li id="section-2" class="clearfix">
-	
-			<div class="row clearfix">
-				<h2>xx</h2>
+ 	<ul class="content">	
+		<li id="section-1" class="clearfix">
+			<div class="main-project clearfix">
+				<h2>主要项目</h2>
 				<div class="col-sm-12 col-md-6">
-					<a href="#" class="thumbnail">
+					<a href="#" class="image-show">
 					<img src="https://img.alicdn.com/imgextra/i2/1036020250/TB2Al91nW8lpuFjy0FpXXaGrpXa_!!1036020250.png" alt="...">
 					</a>
-				<div class="thumbnail cover">
+				<div class="cover">
 					<div class="cover-content">
 						<p>xx</p>
 						<p class="des">xx</p>
@@ -54,10 +49,10 @@
 				</div>
 				
 				<div class="col-sm-12 col-md-6">
-					<a href="#" class="thumbnail">
+					<a href="#" class="image-show">
 					<img src="https://img.alicdn.com/imgextra/i3/1036020250/TB2ky5gnYtlpuFjSspfXXXLUpXa_!!1036020250.png" alt="...">
 					</a>
-					<div class="thumbnail cover">
+					<div class="cover">
 					<div class="cover-content">
 						<p>xx</p>
 						<p class="des">xx</p>
@@ -65,10 +60,10 @@
 				</div>
 				</div>
 				<div class="col-sm-12 col-md-6">
-					<a href="#" class="thumbnail">
+					<a href="#" class="image-show">
 					<img src="https://img.alicdn.com/imgextra/i4/1036020250/TB2lE4In9BjpuFjy1XdXXaooVXa_!!1036020250.png" alt="...">
 					</a>
-					<div class="thumbnail cover">
+					<div class="cover">
 					<div class="cover-content">
 						<p>xx</p>
 						<p class="des">xx</p>
@@ -76,10 +71,10 @@
 				</div>
 				</div>
 				<div class="col-sm-12 col-md-6">
-					<a href="#" class="thumbnail">
+					<a href="#" class="image-show">
 					<img src="https://img.alicdn.com/imgextra/i4/1036020250/TB2lE4In9BjpuFjy1XdXXaooVXa_!!1036020250.png" alt="...">
 					</a>
-					<div class="thumbnail cover">
+					<div class="cover">
 					<div class="cover-content">
 						<p>xx</p>
 						<p class="des">xx</p>
@@ -88,21 +83,20 @@
 				</div>
 	</div>
 		</li>
+		<li id="section-2">
+			<p></p>
+		</li>
 		<li id="section-3">
 				在一回首间，才忽然发现，原来，我一生的种种努力，不过只为了周遭的人对我满意而已。为了搏得他人的称许与微笑，我战战兢兢地将自己套入所有的模式所有的桎梏。走到途中才忽然发现，我只剩下一副模糊的面目，和一条不能回头的路。
-		</li>
-		<li id="section-4">
-				每当我遇到自己不敢直视的困难时，我就会闭上双眼，想象自己是一个80岁的老人，为人生中曾放弃和逃避过的无数困难而懊悔不已，我会对自己说，能再年轻一次该有多好，然后我睁开眼睛：砰！我又年轻一次了！
 		</li>
 		
 	</ul>
 	<div class="aside">
-		<ul class="sidebar">
-			<li><a href="#section-1">1333</a></li>
-			<li><a href="#section-2">23333</a></li>
-			<li><a href="#section-3">33333</a></li>
-			<li><a href="#section-4">43333</a></li>
-		</ul>
+		<ol class="sidebar">
+			<li><a href="#section-1">作品</a></li>
+			<li><a href="#section-2">技能</a></li>
+			<li><a href="#section-3">个人信息</a></li>
+		</ol>
 	</diV>
 
  </div>
