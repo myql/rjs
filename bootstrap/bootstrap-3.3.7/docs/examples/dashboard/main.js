@@ -35,4 +35,22 @@ function play(){
 })
 
 }
-
+var $header=$('.header');
+var $headerLine=$('.header-line');
+var $line=$('.line');
+var $lineCross=$('.line-cross');
+var $headerList=$('.header-list');
+$header.height(50)
+var windowHeight=$(window).height();
+$line.on('click',function(){
+	$lineCross.removeClass('inactive');
+	$line.addClass('inactive');
+	$headerList.removeClass('inactive');
+	$header.height(windowHeight)
+})
+$lineCross.on('click',function(){
+	$lineCross.addClass('inactive');
+	$line.removeClass('inactive');
+	$headerList.addClass('inactive');
+	$header.height(50)
+})
