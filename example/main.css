@@ -14,7 +14,7 @@
 		display: block;
 		clear: both;
 	}
-	html,body,.containers,.rows ,.aside{
+	html,body,.containers,.content,.rows ,.aside{
 		height: 100%;
 	}
 
@@ -70,7 +70,7 @@
 		width: 100%;
 		height: 100%;
 		background: url(https://img.alicdn.com/imgextra/i4/1036020250/TB2HayAqYBmpuFjSZFuXXaG_XXa_!!1036020250.jpg) no-repeat;
-		background-size: 100% 100%;
+		background-size:cover;
 	}
 
 	.containers {
@@ -125,15 +125,7 @@
 	.header-list li a {
 		color: white;
 	}
-	.aside {
-		position: fixed;
-		top: 0;
-		left: 0;
-		z-index: 22;
-		width: 150px;
-		height: 100%;
-		background: #272727;
-	}
+	
 	.rows {
 		position: absolute;
 		left: 150px;
@@ -197,24 +189,43 @@
 	.main-project>div:hover .des{
 		top: 70%;
 	}
+	.aside {
+		position: fixed;
+		top: 0;
+		left: 0;
+		z-index: 22;
+		width: 150px;
+		height: 100%;
+		background: #272727;
+	}
+	.aside a {
+		color: white;
+	}
+	.aside  p {
+		position: absolute;
+		top: 100px;
+		left: 55px;
+		color: white;
+	}
 	.sidebar{
 		position: absolute;
 		bottom: 10px;
-		left: 75px;
+		left: 55px;
 	}
 	.sidebar li {
-		height: 30px;
-		text-align: center;
+		height: 50px;
+		text-align: left;
 	}
 	.content>li.active {
 		display: block;
 	}
-	.sidebar li.active {
-		background: white;
+	.skills-show {
+		padding-bottom: 50px;
 	}
 	.skills {
 		padding: 10px;
 	}
+	
 	.skills p{
 		float: left;
 		width: 10%;
@@ -223,7 +234,7 @@
 		position: relative;
 		float: left;
 		height: 20px;
-		width: 80%;
+		width: 70%;
 		margin-left: 20px;
 		background: #ccc;
 		background-image: linear-gradient(to bottom,#ccc,#aaa);
@@ -261,4 +272,18 @@
 	}
 	.skills-5 .skills-cover {
 		width: 40%;
+	}
+	.skills-des {
+			/* padding-top: 50px; */
+			background: black;
+			color: white;
+	}
+	.skills-des ol{
+		float: left;
+		width: 50%;
+	}
+	.skills-des ol li {
+		word-break: break-all;
+		padding: 20px;
+		line-height: 1.5;
 	}

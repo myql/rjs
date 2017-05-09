@@ -3,11 +3,14 @@
 <head>
 <meta charset="UTF-8">
 <title>Bootstrap 附加导航（Affix）插件</title>
-<!-- <link rel="stylesheet" href="http://cdn.static.runoob.com/libs/bootstrap/3.3.7/css/bootstrap.min.css"> -->
 <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests" />
 <link rel="stylesheet" href="main.css">
+<style>
+	.sidebar-works a {
+		color: yellow;
+	}
+</style>
 <script src="http://cdn.static.runoob.com/libs/jquery/2.1.1/jquery.min.js"></script>
-<!-- <script src="http://cdn.static.runoob.com/libs/bootstrap/3.3.7/js/bootstrap.min.js"></script> -->
 </head>
 <body>
 <div class="containers">
@@ -25,9 +28,9 @@
 			</div>
 		</div>
 		<ol class="header-list inactive">
-			<li><a href="index.html">作品</a></li>
-			<li><a href="skills.html">技能</a></li>
-			<li><a href="information.html">个人信息</a></li>
+			<li><a href="index.html">1.作品</a></li>
+			<li><a href="skills.html">2.技能</a></li>
+			<li><a href="information.html">3.个人信息</a></li>
 		</ol>
 	</div>
  <div class="rows">
@@ -84,12 +87,14 @@
 		</li>		
 	</ul>
 	<div class="aside">
+		<img src="">
+		<p>哈哈</p>
 		<ol class="sidebar">
-			<li><a href="index.html">作品</a></li>
-			<li><a href="skills.html">技能</a></li>
-			<li><a href="information.html">个人信息</a></li>
+			<li class="sidebar-works"><a href="index.html">1.作品</a></li>
+			<li class="sidebar-skills"><a href="skills.html">2.技能</a></li>
+			<li class="sidebar-info"><a href="information.html">3.个人信息</a></li>
 		</ol>
-	</diV>
+	</div>
 
  </div>
 </div>

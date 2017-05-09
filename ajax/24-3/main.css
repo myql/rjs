@@ -1,0 +1,68 @@
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+.container {
+	width: 500px;
+	height: 330px;
+	margin: 100px auto;
+	border :1px solid #4cdfee;
+	background: -webkit-radial-gradient(top center,circle,#4f9595,#5f9b8d,#157897,#133a75);
+	border-radius: 8px;
+	text-align: center;
+	font-family: Helvetica, 'Hiragino Sans GB', 'Microsoft Yahei', 'Î¢ÈíÑÅºÚ', Arial, sans-serif;
+	font-size: 0;
+	color: white;
+		padding-top: 20px;
+}
+.container h3 {
+	font-size: 24px;
+	font-weight: normal;
+
+	
+}
+.container div {
+	font-size: 0;
+	margin-top: 20px;
+}
+
+.container .name-header {
+	display: inline-block;
+	width: 130px;
+	font-size: 20px;
+	line-height: 20px;
+	text-align: right;
+}
+.container .hint {
+	display: inline-block;
+	font-size: 12px;
+	text-align: left;
+	margin-top: 5px;
+	margin-left: 222px;
+	width: 260px;
+	color: #ccc;
+}
+.secret2-hint {
+	opacity: 0;
+}
+.inputWords input{
+	display: inline-block;
+	border: none;
+	height: 24px;
+	border-radius: 4px;
+}
+.inputWords input:focus {
+	outline: none;
+}
+.register input{
+	display: inline-block;
+	width: 50px;
+	height: 30px;
+	border: none;
+	cursor: pointer;
+	border: 1px solid #ff0;
+	background: linear-gradient(to top,#ffc,#ff5,#ff0);
+	border-radius: 4px;
+	color: #111;
+}

@@ -54,3 +54,23 @@ $lineCross.on('click',function(){
 	$headerList.addClass('inactive');
 	$header.height(50)
 })
+
+
+var $skillsShow=$('.skills-show');
+var $skillsDes=$('.skills-des');
+var desHeight=$skillsDes.height();
+var showHeight=$skillsShow.height();
+var skillsHeight=desHeight+showHeight;
+console.log('w'+skillsHeight)
+$(window).resize(function(){
+	var windowHeight=$(window).height();
+	if(windowHeight>=skillsHeight){
+		var desHeights=windowHeight-showHeight;
+		$skillsDes.height(desHeights);
+		console.log(desHeights)
+		console.log(skillsHeight)
+	}else {
+		$skillsDes.height(desHeight);
+	}
+})
+
