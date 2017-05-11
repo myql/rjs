@@ -1,0 +1,83 @@
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	cursor: pointer;
+}
+.clearfix:after {
+	content: '';
+	display: block;
+	clear: both;
+}
+ul,li {
+	list-style: none;
+}
+.container {
+	position: relative;
+	width: 382px;
+	height: 380px;
+	margin: 20px auto;
+	padding: 20px;
+	border: 1px solid #0a2341;
+	border-radius: 10px;
+	background: linear-gradient(rgba(166,103,148,1),rgba(68,75,124,0.8));
+}
+.main {
+	position: relative;
+}
+.main .nav {
+	float: left;
+}
+.main .sound {
+	float: right;
+}
+.main .nav i{
+	font-size: 30px;
+	color: #c7ccbb;
+}
+.main .sound i {
+	font-size: 30px;
+	color: #fff;
+}
+.main .main-content img{
+	position: absolute;
+	top: 50px;
+	left: 0px;
+	width: 100px;
+	height: 100px;
+	border-radius: 50%;
+}
+.main .main-lyrics {
+	position: absolute;
+	top: 50px;
+	right: 0;
+	width: 200px;
+	height: 150px;
+	border: 1px solid red;
+}
+.control {
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	width: 100%;
+	height: 100px;
+}
+.control>div {
+	float: left;
+	text-align: center;
+}
+.control .control-left {
+	width: 125px;
+	
+}
+.control div i {
+	font-size: 30px;
+	color: #fff;
+}
+.control .control-center {
+	width: 130px;
+	
+}
+.control .control-right {
+	width: 125px;
+}

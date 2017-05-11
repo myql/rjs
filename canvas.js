@@ -1,0 +1,10 @@
+var canvas=document.getElementById('canvas');
+var ctx=canvas.getContext("2d");
+ctx.lineWidth=2;
+ctx.stroeSTyle='#fff';
+ctx.beginPath();
+ctx.moveTo(0,20);
+ctx.bezierCurveTo(60,-35,135,45,140,35);
+ctx.moveTo(160,35);
+ctx.bezierCurveTo(200,40,255,45,275,35);
+ctx.stroke();
