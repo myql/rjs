@@ -12,6 +12,9 @@
 ul,li {
 	list-style: none;
 }
+.inactive {
+	display: none;
+}
 .container {
 	position: relative;
 	width: 382px;
