@@ -15,6 +15,9 @@ ul,li {
 .inactive {
 	display: none;
 }
+.active {
+	display: block;
+}
 .container {
 	position: relative;
 	width: 382px;
