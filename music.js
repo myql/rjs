@@ -66,6 +66,7 @@ function getmusic(){
 function getLyrics(){
 	var sid=$('audio').attr('sid');
 	$.get('http://api.jirengu.com/fm/getLyric.php',{sid:sid},function(lyr){
+		var lyr=JSON.parse(lyr);
 		alert(lyr.lyric)
 	})
 }
