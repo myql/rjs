@@ -24,7 +24,7 @@ function getChannel(){
 	$.ajax({
 		url:'http://api.jirengu.com/fm/getChannels.php',
 		dataType: 'json',
-		Method: 'get',
+		type: 'get',
 		success: function(response){
 			var  channels=response.channels;
 			var num=Math.floor(Math.random()*channels.length);
@@ -41,7 +41,7 @@ function getmusic(){
 	$.ajax({
 		url:'http://api.jirengu.com/fm/getSong.php',
 		dataType: 'json',
-		Method: 'get',
+		type: 'get',
 		data: {
 			'channel': $('.record').attr('data-id')
 		},
@@ -55,6 +55,7 @@ function getmusic(){
 					author=resource.artist;
 					$('audio').attr('src',url);
 					$('.main-image').attr('src',bgPic);
+					$('.main-music').text(title);
 					play();
 		}
 	})

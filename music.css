@@ -50,6 +50,22 @@ ul,li {
 	height: 100px;
 	border-radius: 50%;
 }
+.main .record {
+	position: absolute;
+	top: 160px;
+	left: 50px;
+	margin-left: -50px;
+	width: 100px;
+	text-align: center;
+}
+.main .main-music {
+	position: absolute;
+	top: 190px;
+	left: 50px;
+	margin-left: -100px;
+	width: 200px;
+	text-align: center;
+}
 .main .main-lyrics {
 	position: absolute;
 	top: 50px;
