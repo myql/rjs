@@ -37,6 +37,7 @@ function getChannel(){
 		}
 	})
 }
+getmusic()
 function getmusic(){
 	$.ajax({
 		url:'http://api.jirengu.com/fm/getSong.php',
@@ -52,11 +53,19 @@ function getmusic(){
 					sid=resource.sid,
 					ssid=resource.ssid,
 					title=resource.title,
+					lyrics=resource.lyric,
 					author=resource.artist;
 					$('audio').attr('src',url);
 					$('.main-image').attr('src',bgPic);
 					$('.main-music').text(title);
 					play();
+					getLyrics();
 		}
+	})
+}
+function getLyrics(){
+	var sid=$('audio').attr('sid');
+	$.get('http://api.jirengu.com/fm/getLyric.php',{sid:sid},function(lyr){
+		alert(lyr.lyric)
 	})
 }
