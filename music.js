@@ -37,7 +37,7 @@ function getChannel(){
 		}
 	})
 }
-getmusic()
+getChannel()
 function getmusic(){
 	$.ajax({
 		url:'http://api.jirengu.com/fm/getSong.php',
@@ -55,6 +55,8 @@ function getmusic(){
 					title=resource.title,
 					lyrics=resource.lyric,
 					author=resource.artist;
+					$('audio').attr('sid',sid);
+	       			$('audio').attr('ssid',ssid);
 					$('audio').attr('src',url);
 					$('.main-image').attr('src',bgPic);
 					$('.main-music').text(title);
@@ -63,10 +65,12 @@ function getmusic(){
 		}
 	})
 }
+var myAudio=$('audio')
 function getLyrics(){
 	var sid=$('audio').attr('sid');
 	$.get('http://api.jirengu.com/fm/getLyric.php',{sid:sid},function(lyr){
 		var lyr=JSON.parse(lyr);
+		console.log(lyr.lyric)
 		var line=lyr.lyric.split('\n')
 		var timeReg=/\[\d{2}:\d{2}.\d{2}\]/g;
 		var result=[];
@@ -89,23 +93,23 @@ function getLyrics(){
 	})	
 }
 function renderLyric(){
-	var lyrLi='';
-	for(var i=0;i<lyricArr.lenght;i++){
-		lyrLI+="<li data-time='"+lyricArr[i][0]+"'+lyricArr[i][1]"+"</li>";
-		$('.music-lyric' ).append(lyrLi);
-		setInterval(showLyric,100);
-	}
+	var lyrLi = "";
+    for (var i = 0; i < lyricArr.length; i++) {
+        lyrLi += "<li data-time='"+lyricArr[i][0]+"'>"+lyricArr[i][1]+"</li>";
+    }
+    $('.music-lyric .lyric').append(lyrLi);
+    setInterval(showLyric,100);//ÊÄé‰πàÂ±ïÁ§∫Ê≠åËØç
 }
 function showLyric(){
-    var liH = $(".music-lyric li").eq(5).outerHeight()-3; 
-    for(var i=0;i< lyricArr.length;i++){
-        var curT = $(".music-lyric li").eq(i).attr("data-time");//ªÒ»°µ±«∞li¥Ê»Îµƒµ±«∞“ª≈≈∏Ë¥  ±º‰
-        var nexT = $(".music-lyric li").eq(i+1).attr("data-time");
+    var liH = $(".lyric li").eq(5).outerHeight()-3; //ÊØèË°åÈ´òÂ∫¶
+    for(var i=0;i< lyricArr.length;i++){//ÈÅçÂéÜÊ≠åËØç‰∏ãÊâÄÊúâÁöÑli
+        var curT = $(".lyric li").eq(i).attr("data-time");//Ëé∑ÂèñÂΩìÂâçliÂ≠òÂÖ•ÁöÑÂΩìÂâç‰∏ÄÊéíÊ≠åËØçÊó∂Èó¥
+        var nexT = $(".lyric li").eq(i+1).attr("data-time");
         var curTime = myAudio.currentTime;
-        if ((curTime > curT) && (curT < nexT)){//µ±«∞ ±º‰‘⁄œ¬“ªæ‰ ±º‰∫Õ∏Ë«˙µ±«∞ ±º‰÷Æº‰µƒ ±∫Ú æÕ‰÷»æ ≤¢πˆ∂Ø
-            $(".music-lyric li").removeClass("active");
-            $(".music-lyric li").eq(i).addClass("active");
-            $('.music-lyric').css('top', -liH*(i-2));
+        if ((curTime > curT) && (curT < nexT)){//ÂΩìÂâçÊó∂Èó¥Âú®‰∏ã‰∏ÄÂè•Êó∂Èó¥ÂíåÊ≠åÊõ≤ÂΩìÂâçÊó∂Èó¥‰πãÈó¥ÁöÑÊó∂ÂÄô Â∞±Ê∏≤Êüì Âπ∂ÊªöÂä®
+            $(".lyric li").removeClass("active");
+            $(".lyric li").eq(i).addClass("active");
+            $('.music-lyric .lyric').css('top', -liH*(i-2));
         }
     }
 
