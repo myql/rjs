@@ -1,0 +1,40 @@
+@media (min-width: 768px)
+{
+.side-nav {
+    position: fixed;
+    top: 51px;
+    left: 0px;
+    width: 225px;
+    border: none;
+    border-radius: 0;
+    overflow-y: auto;
+    background-color: #222;
+    bottom: 0;
+    overflow-x: hidden;
+    padding-bottom: 40px;
+}
+.side-nav li {
+	display: block;
+}
+}
+@media (min-width: 768px)
+{
+.navbar-nav {
+    float: left;
+    margin: 0;
+}
+}
+body {
+	position: relative;
+}
+.wrap {
+	position: absolute;
+	top: 50px;
+	left: 250px;
+}
+
+
+
+
+
+
