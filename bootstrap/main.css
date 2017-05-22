@@ -27,12 +27,17 @@
 body {
 	position: relative;
 }
+li,ul {
+	list-style: none;
+}
 .wrap {
 	position: absolute;
 	top: 50px;
 	left: 250px;
 }
-
+h2 {
+	border-bottom: 1px solid #eee;
+}
 
 
 
