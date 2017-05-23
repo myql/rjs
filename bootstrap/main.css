@@ -1,45 +1,16 @@
-@media (min-width: 768px)
-{
-.side-nav {
-    position: fixed;
-    top: 51px;
-    left: 0px;
-    width: 225px;
-    border: none;
-    border-radius: 0;
-    overflow-y: auto;
-    background-color: #222;
-    bottom: 0;
-    overflow-x: hidden;
-    padding-bottom: 40px;
+* {
+	margin: 0;
+	padding: 0;
 }
-.side-nav li {
-	display: block;
-}
-}
-@media (min-width: 768px)
-{
-.navbar-nav {
-    float: left;
-    margin: 0;
-}
-}
-body {
-	position: relative;
-}
-li,ul {
+ul,li {
 	list-style: none;
 }
-.wrap {
-	position: absolute;
-	top: 50px;
-	left: 250px;
+#header {
+	width: 100%;
+	height: 70px;
+	background: #222;
+	line-height: 70px;
 }
-h2 {
-	border-bottom: 1px solid #eee;
+#header ul {
+	float: right;
 }
-
-
-
-
-
