@@ -20,7 +20,7 @@ ul,li {
 }
 .container {
 	position: relative;
-	width: 382px;
+	width: 500px;
 	height: 380px;
 	margin: 20px auto;
 	padding: 20px;
@@ -48,15 +48,20 @@ ul,li {
 .main .main-content img{
 	position: absolute;
 	top: 50px;
-	left: 0px;
+	left: 100px;
+	margin-left: -50px;
 	width: 100px;
 	height: 100px;
 	border-radius: 50%;
 }
+.content-left {
+	width: 200px;
+	height: 300px;
+}
 .main .record {
 	position: absolute;
 	top: 160px;
-	left: 50px;
+	left: 100px;
 	margin-left: -50px;
 	width: 100px;
 	text-align: center;
@@ -66,25 +71,45 @@ ul,li {
 .main .main-music {
 	position: absolute;
 	top: 190px;
-	left: 50px;
+	left: 100px;
 	margin-left: -100px;
 	width: 200px;
 	text-align: center;
 	font-size: 14px;
 	color: #fff;
 }
-.main .main-lyrics {
-	position: absolute;
-	top: 50px;
-	right: 0;
-	width: 200px;
-	height: 150px;
-	border: 1px solid red;
+ .music-lyric{
+ 	position: absolute;
+ 	left: 180px;
+ 	top: 10px;
+	width: 260px;
+	height: 230px;
+	padding: 20px 0px;
+}
+ .music-lyric .lyric-view{
+	height: 190px;
+	overflow: hidden;
+}
+.music-lyric ul{
+	position: relative;
+	transition: all 1s;
+}
+.lyric li{
+	padding: 5px 0 2px 0;
+	position: relative;
+	text-align: center;
+	color: rgba(255, 255, 255, 0.6);
+	font-size: 12px ;
+	transition: all 1s;
+}
+.lyric li.active {
+  font-size: 13px;
+  color: #ffffff;
 }
 .control {
 	position: absolute;
-	bottom: 0;
-	left: 0;
+	bottom: -30px;
+	left: 0px;
 	width: 100%;
 	height: 100px;
 }
@@ -93,7 +118,7 @@ ul,li {
 	text-align: center;
 }
 .control .control-left {
-	width: 125px;
+	width: 165px;
 	
 }
 .control div i {
@@ -101,9 +126,9 @@ ul,li {
 	color: #fff;
 }
 .control .control-center {
-	width: 130px;
+	width: 168px;
 	
 }
 .control .control-right {
-	width: 125px;
+	width: 165px;
 }

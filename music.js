@@ -65,12 +65,13 @@ function getmusic(){
 		}
 	})
 }
-var myAudio=$('audio')
+var myAudio=$('audio')[0]
 function getLyrics(){
 	var sid=$('audio').attr('sid');
 	$.get('http://api.jirengu.com/fm/getLyric.php',{sid:sid},function(lyr){
 		var lyr=JSON.parse(lyr);
-		console.log(lyr.lyric)
+		if(!!lyr.lyric){
+		$('.music-lyric .lyric').empty();
 		var line=lyr.lyric.split('\n')
 		var timeReg=/\[\d{2}:\d{2}.\d{2}\]/g;
 		var result=[];
@@ -90,6 +91,7 @@ function getLyrics(){
 		});
 		lyricArr=result;
 	renderLyric()
+}
 	})	
 }
 function renderLyric(){
