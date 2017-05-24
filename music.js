@@ -116,3 +116,9 @@ function showLyric(){
     }
 
 }
+
+var $soundControl=$('.sound-control');
+var $soundPoint=$('.sound-point');
+$soundControl.on('click',function(){
+	console.log(1)
+})

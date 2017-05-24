@@ -132,3 +132,22 @@ ul,li {
 .control .control-right {
 	width: 165px;
 }
+/*音量控制*/
+.sound-control {
+	position: absolute;
+	top: 16px;
+	left: 200px;
+	width: 210px;
+	height: 4px;
+	background: rgba(255,255,255,0.8);
+	border-radius: 2px;
+}
+.sound-control .sound-point {
+	position: absolute;
+	top: -2px;
+	right: 0;
+	width: 8px;
+	height: 8px;
+	background: rgba(255,255,255,1);
+	border-radius: 50%;
+}
