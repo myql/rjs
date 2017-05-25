@@ -8,6 +8,9 @@ ul,li {
 html,body {
 	height: 100%;
 }
+a {
+	text-decoration: none;
+}
 @media (max-width: 768px){
 	.navbar-inverse {
 		background: #222222;
@@ -23,6 +26,10 @@ html,body {
 	.header-content .header-inro-2 {
 		font-size: 50px;
 		line-height: 50px;
+	}
+	.layout {
+		width: 500px;
+		margin: 0 auto;
 	}
 }
 @media (min-width: 768px) {
@@ -46,6 +53,12 @@ html,body {
 		line-height: 75px;
 	}
 }
+@media (min-width: 992px) and (max-width: 1200px) {
+	.portfolio-list {
+		width: 780px;
+		margin: 0 auto;
+	}
+}
 	@media (min-width: 1200px) {
   .navbar >.container-fluid {
     width: 1140px;
@@ -53,6 +66,14 @@ html,body {
   }
 	.navbar-inverse {
 		background: none;
+	}
+	.layout {
+	width: 1200px;
+	margin: 0 auto;
+	}
+	.portfolio-list {
+		width: 1170px;
+		margin: 0 auto;
 	}
 	}
 .navbar-inverse .navbar-brand {
@@ -140,4 +161,107 @@ header {
 	font-weight: bold;
 	color: #fff;
 	width: 100%;
+}
+.header-more {
+	display: block;
+	width: 220px;
+	height: 70px;
+	line-height: 70px;
+	background: #fed136;
+	margin: 60px auto;
+	border-radius: 4px;
+	font-family: Montserrat, "Helvetica Neue", Helvetica, Arial, sans-serif;
+	font-weight: bold;
+	font-size: 18px; 
+	color: #fff;
+}
+.header-more:hover { 
+	color: #fff;
+	background: rgba(254,197,3,1);
+	text-decoration: none;
+}
+.header-more:focus{ 
+	color: #fff;
+	background: rgba(254,197,3,1);
+	text-decoration: none;
+}
+#container {
+	text-align: center;
+}
+.content {
+	padding-top: 160px;
+	font-family: Montserrat, "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+.content h1 {
+	font-size: 40px;
+	line-height: 40px;
+	font-weight: bold;
+	color: #333;
+}
+.content h5 {
+	margin-top: 20px;
+	font-family: "Droid Serif", "Helvetica Neue", Helvetica, Arial, sans-serif;
+	font-size: 16px;
+	font-style: italic;
+	line-height: 16px;
+	margin-bottom: 80px;
+}
+.services-list h3 {
+	font-size: 18px;
+	line-height: 20px;
+	font-weight: bold;
+	color: #333;
+}
+.services-list p {
+	font-family: "Roboto Slab", "Helvetica Neue", Helvetica, Arial, sans-serif;
+	font-size: 14px;
+	line-height: 25px;
+	color: #777;
+}
+.services-list .services-icon {
+width: 112px;
+height: 112px;
+line-height: 112px;
+border-radius: 50%;
+background: #fed136;
+text-align: center;
+margin: 0 auto;
+}
+.services-icon i {
+	font-size: 56px;
+	color: white;
+}
+#portfolio {
+	background: rgb(238,238,238);
+}
+
+.portfolio-list p {
+	font-family: "Droid Serif", "Helvetica Neue", Helvetica, Arial, sans-serif;
+	font-style: italic;
+	font-size: 16px;
+	line-height: 28px;
+}
+.portfolio-list li {
+	width: 360px;
+	height: 360px;
+	background: #fff;
+	margin: 0 15px;
+	margin-bottom: 30px;
+}
+.portfolio-list li img {
+	width: 100%;
+}
+.portfolio-icon {
+	position: relative;
+	width: 100%;
+	height: 238px;
+}
+.cover{
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 238px;
+	/* background: rgba(234,193,53,1); */
+	border: 1px solid red;
 }
