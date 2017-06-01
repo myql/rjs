@@ -1,6 +1,7 @@
 * {
 	margin: 0;
 	padding: 0;
+	transition: all 0.2s;
 }
 ul,li {
 	list-style: none;
@@ -11,11 +12,18 @@ html,body {
 a {
 	text-decoration: none;
 }
+
+.navbar-fixed-top {
+	background: #222;
+	border: 1px solid #f0f;
+	padding-bottom: 15px;
+}
 .navbar-inverse .navbar-brand {
 	font-family: "Kaushan Script", "Helvetica Neue", Helvetica, Arial, cursive;
-	line-height: 20px;
+	line-height: 0px;
 	color: #fec503;
-	height: 50px;
+	 height: 50px;
+	border: 1px solid red;
 }
 .navbar-inverse .navbar-brand:hover {
 	color: #fec503;
@@ -24,9 +32,9 @@ a {
 	color: #fec503;
 }
 .navbar-inverse .navbar-nav>li>a {
-	font: 14px/20px Montserrat, "Helvetica Neue", Helvetica, Arial, sans-serif;
-	padding-top: 15px;
-	padding-bottom: 15px;
+	font: 14px/10px Montserrat, "Helvetica Neue", Helvetica, Arial, sans-serif;
+	padding-top: 20px;
+	padding-bottom: 20px;
 	color: #fff;
 }
 .navbar-inverse  {
@@ -73,7 +81,7 @@ a {
 header {
 	position: relative;
 	width: 100%;
-	height: 100%;
+	height: 900px;
 	background: url(images/header-bg.jpg) no-repeat;
 	background-size: cover;
 }
@@ -234,6 +242,7 @@ header {
 	height: 260px;
 	background: rgb(234,193,53);
 	opacity: 0;
+	transition: all 1s;
 }
 .cover .cross-1 {
 	position: absolute;
@@ -258,7 +267,6 @@ header {
 #about {
 	position: relative;
 	height: 1800px;
-	border: 1px solid red;
 }
 .about-background {
 	position: absolute;
@@ -401,7 +409,6 @@ header {
 	text-decoration: none;
 }
 .team-icon li  a:focus {
-	color: #ded136;
 	text-decoration: none;
 }
 .team-icon li i {
@@ -428,6 +435,91 @@ header {
 	.icon-ad li {
 		padding: 60px 0;
 	}
+
+#contact {
+	background: #222 url(https://img.alicdn.com/imgextra/i1/1036020250/TB2hRBFrgxlpuFjSszgXXcJdpXa_!!1036020250.png) no-repeat center center;
+	padding-bottom: 150px;
+}
+#contact h1 {
+	color: white;
+}
+#contact h5 {
+	color: #777;
+}
+#contact input {
+	display: inline-block;
+	width: 100%;
+	height: 63px;
+	margin-bottom: 55px;
+	border-radius: 6px;
+	border: none;
+}
+#contact input:focus {
+	outline: 1px solid #fed136;
+}
+#container .message-box{
+	 height: 300px;
+}
+#container .send-message {
+	display: inline-block;
+	width: 230px;
+	height: 70px;
+	line-height: 70px;
+	color: white;
+	font-family: Montserrat, "Helvetica Neue", Helvetica, Arial, sans-serif;
+	font-size: 18px;
+	font-weight: bold;
+	text-align: center;
+	background: #fec503;
+	border: none;
+	border-radius: 4px;
+}
+#footer {
+	padding: 25px 0;
+	font-family: Montserrat, "Helvetica Neue", Helvetica, Arial, sans-serif;
+	color: #333;
+}
+#footer  ul {
+	line-height: 40px;
+}
+#footer .copyright {
+	font-size: 14px;
+	margin-right: 4px;
+	margin-left: 4px;
+}
+#footer .icon-list i {
+	font-size: 40px;
+}
+#footer .icon-list a {
+	color: #222;
+	margin-right: 10px;
+}
+#footer .icon-list a:hover {
+	color: #fed136;
+	text-decoration: none;
+}
+#footer .icon-list  a:focus {
+	text-decoration: none;
+}
+#footer .rights-list a {
+	color: #fec503;
+	font-size: 14px;
+	margin-right: 10px;
+
+}
+#footer .rights-list a:hover {
+	text-decoration: underline;
+}
+.navbar-inverse .navbar-nav li {
+	border: 1px solid red;
+}
+.navbar-inverse .navbar-nav>.active>a{
+	background-color: #fed136;
+	border-radius: 4px;
+}
+.navbar-inverse .navbar-nav>.active>a:hover {
+	background-color: #fec503;
+}
 @media (max-width: 768px){
 	.navbar-inverse {
 		background: #222222;
@@ -435,6 +527,7 @@ header {
 	}
 	.navbar-inverse .navbar-brand {
 		font-size: 18px;
+		line-height: 20px;
 	}
 	.header-content .header-inro-1 {
 		font-size: 22px;
@@ -499,28 +592,11 @@ header {
 		padding: 30px 0;
 	}
 }
-#contact {
-	background: #222 url(https://img.alicdn.com/imgextra/i1/1036020250/TB2hRBFrgxlpuFjSszgXXcJdpXa_!!1036020250.png) no-repeat;
-}
-#contact form li{
-	border: 1px solid red;
-}
-#contact input {
-	display: inline-block;
-	width: 100%;
-	height: 63px;
-	margin-bottom: 55px;
-	border-radius: 6px;
-	border: none;
-}
-#contact input :focus {
-	outline: 1px solid #fed136;
-}
 @media (min-width: 768px) {
   .navbar >.container-fluid {
     width: 720px;
 		margin: 0 auto;
-		padding-top: 25px;
+		padding-top: 15px;
   }
 	.navbar-inverse .navbar-brand {
 		font-size: 28px;
