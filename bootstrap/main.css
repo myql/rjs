@@ -15,7 +15,6 @@ a {
 
 .navbar-fixed-top {
 	background: #222;
-	border: 1px solid #f0f;
 	padding-bottom: 15px;
 }
 .navbar-inverse .navbar-brand {
@@ -23,7 +22,6 @@ a {
 	line-height: 0px;
 	color: #fec503;
 	 height: 50px;
-	border: 1px solid red;
 }
 .navbar-inverse .navbar-brand:hover {
 	color: #fec503;
@@ -356,7 +354,7 @@ header {
 	color: #777;
 }
 .intro-1,.intro-3 {
-		left: 0;
+	left: 0;
 	text-align: right;
 }
 .intro-2,.intro-4 {
@@ -366,7 +364,6 @@ header {
 #team {
 	background: #eee;
 	padding-bottom: 165px;
-	border: 1px solid black;
 }
 .team-list img {
 	width: 225px;
@@ -510,9 +507,7 @@ header {
 #footer .rights-list a:hover {
 	text-decoration: underline;
 }
-.navbar-inverse .navbar-nav li {
-	border: 1px solid red;
-}
+
 .navbar-inverse .navbar-nav>.active>a{
 	background-color: #fed136;
 	border-radius: 4px;
