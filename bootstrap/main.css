@@ -12,14 +12,20 @@ html,body {
 a {
 	text-decoration: none;
 }
-
+::selection { background: #fdd035; }
+ ::-moz-selection { background#fdd035;} 
+ ::-webkit-selection { background: #fdd035;}
 .navbar-fixed-top {
 	background: #222;
 	padding-bottom: 15px;
 }
+.navbar-inverse .navbar-collapse {
+	border: none;
+	padding: none;
+}
 .navbar-inverse .navbar-brand {
 	font-family: "Kaushan Script", "Helvetica Neue", Helvetica, Arial, cursive;
-	line-height: 0px;
+	line-height: 10px;
 	color: #fec503;
 	 height: 50px;
 }
@@ -443,19 +449,21 @@ header {
 #contact h5 {
 	color: #777;
 }
-#contact input {
+#contact input,#container .message-box{
 	display: inline-block;
 	width: 100%;
 	height: 63px;
 	margin-bottom: 55px;
 	border-radius: 6px;
 	border: none;
+	padding: 20px;
 }
-#contact input:focus {
+#contact input:focus,#container .message-box:focus {
 	outline: 1px solid #fed136;
 }
 #container .message-box{
 	 height: 300px;
+	 padding: 20px;
 }
 #container .send-message {
 	display: inline-block;
@@ -515,6 +523,9 @@ header {
 .navbar-inverse .navbar-nav>.active>a:hover {
 	background-color: #fec503;
 }
+.inactive {
+	display: none;
+}
 @media (max-width: 768px){
 	.navbar-inverse {
 		background: #222222;
@@ -522,7 +533,10 @@ header {
 	}
 	.navbar-inverse .navbar-brand {
 		font-size: 18px;
-		line-height: 20px;
+		line-height: 30px;
+	}
+	.navbar-fixed-top {
+		padding-bottom: 0;
 	}
 	.header-content .header-inro-1 {
 		font-size: 22px;
