@@ -171,7 +171,6 @@ function songTime(){
 	var songDuration=myMusic.duration;
 	var songM=parseInt(songDuration/60);
 	var songS=parseInt(songDuration%60);
-	$('.stop-time').text('00:00')
 	setTimeout(function(){
 		$('.stop-time').text((playTime(songM)+':'+playTime(songS)))
 	},1000)
