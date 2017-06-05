@@ -34,7 +34,7 @@ function pause() {
 }
 function getChannel(){
 	$.ajax({
-		url:'http://api.jirengu.com/fm/getChannels.php',
+		url:'//api.jirengu.com/fm/getChannels.php',
 		dataType: 'json',
 		type: 'get',
 		success: function(response){
