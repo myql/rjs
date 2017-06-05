@@ -1,4 +1,13 @@
 var myMusic=$('audio')[0];
+function playTime(time){
+	if(time<10){
+		time='0'+time
+		return time
+	}else{
+		time=time
+		return time
+	}
+}
 $('.play').click(function(){
 	if(myMusic.paused){
 		play()
@@ -14,10 +23,13 @@ $('.back').click(function(){
 })
 function play(){
 	myMusic.play();
+	songTime()
 	$('.play .btn2').removeClass('inactive').siblings().addClass('inactive');
+
 }
 function pause() {
 	myMusic.pause();
+	clearInterval(t)
 		$('.play .btn1').removeClass('inactive').siblings().addClass('inactive');
 }
 function getChannel(){
@@ -33,6 +45,7 @@ function getChannel(){
 			$('.record').text(channelname);
 			$('.record').attr('title',channelname);
 			$('.record').attr('data-id',channelId);
+			console.log($('.record').attr('data-id'))
 			getmusic();
 		}
 	})
@@ -90,7 +103,9 @@ function getLyrics(){
 			return a[0]-b[0]
 		});
 		lyricArr=result;
-	renderLyric()
+	
+		renderLyric()
+		songTime()
 }
 	})	
 }
@@ -123,46 +138,79 @@ $soundPoint.on('mousedown',function(event){
 	var $cur = $(this);
   var oldX = event.clientX;
 
-  var right = parseInt($cur.css('right'));
+  var left= parseInt($cur.css('left'));
   document.onmousemove = function(event) {
-      var x=oldX-event.clientX ;
-			var rightX=right+x;
-				console.log(rightX)
-       $cur.css({
-					right: rightX
+      	var x=event.clientX-oldX;
+		var leftX=left+x;
+		 $cur.css({
+			left: leftX
+		})
+	    if ( parseInt($cur.css('left'))<=0) {
+			leftX=0;
+			$cur.css({
+				left: 0
 			})
-            if ( parseInt($cur.css('right')) < 0) {
-                $cur.css({
-									right: 0
+		  }
+	   	else  if (parseInt($cur.css('left'))>=208) {
+			leftX=208;		
+			$cur.css({
+				left: 208
 			})
-						}
-           else  if (parseInt($cur.css('right')) > 208) {
-                $cur.css({
-									right: '208px'
-								})
-            }
-						Mymusic.volume=parseFloat(rightX/208);
-        }
+	    }
+
+		 myMusic.volume=1-parseFloat(leftX/208);			
+	}
         document.onmouseup = function (event) {
             document.onmouseup = null;
             document.onmousemove = null;
         }
 	
-})
-if(myMusic.ended){
-	getmusic();
-}
-function playTime(time){
-	if(time<10){
-		time='0'+time
-	}else{
-		time=time
-	}
-}
+})    
 var $timePoint=$('.time-point');
-$timePoint.click(function(){
+var $timeLine=$('.time-line');
+function songTime(){
 	var songDuration=myMusic.duration;
 	var songM=parseInt(songDuration/60);
 	var songS=parseInt(songDuration%60);
-	$('.stop-time').text((playTime(songM)+':'+playTime(songS)))
+	$('.stop-time').text('00:00')
+	setTimeout(function(){
+		$('.stop-time').text((playTime(songM)+':'+playTime(songS)))
+	},1000)
+	t=setInterval(function(){
+	var songTime=$('.start-time').text();
+	var timeArray=songTime.split(':');
+	var runM=timeArray[0]*60
+	var runS=timeArray[1]
+	var runTime=parseInt(runM)+parseInt(runS)
+		setTime()
+	},100)
+
+}
+function setTime(){
+	var nowTime=myMusic.currentTime;
+	var songDuration=myMusic.duration;
+			$timePoint.css({
+			width: nowTime/songDuration*360
+		})
+		var nowM=parseInt(nowTime/60);
+		var nowS=parseInt(nowTime%60);
+		var nowText=playTime(nowM)+':'+playTime(nowS)
+		$('.start-time').text(nowText)
+}
+$timeLine.click(function(event){
+	var lineX=event.clientX;
+	var songDuration=myMusic.duration;
+	var nowTime=(lineX-205)/360*songDuration;
+	myMusic.currentTime=nowTime;
+	setTime()
+	getLyrics()
 })
+setInterval(function(){
+	if(myMusic.currentTime==myMusic.duration){
+	getmusic();	
+	}
+},1000)
+	
+
+
+	
