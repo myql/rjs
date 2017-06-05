@@ -119,6 +119,50 @@ function showLyric(){
 
 var $soundControl=$('.sound-control');
 var $soundPoint=$('.sound-point');
-$soundControl.on('click',function(){
-	console.log(1)
+$soundPoint.on('mousedown',function(event){
+	var $cur = $(this);
+  var oldX = event.clientX;
+
+  var right = parseInt($cur.css('right'));
+  document.onmousemove = function(event) {
+      var x=oldX-event.clientX ;
+			var rightX=right+x;
+				console.log(rightX)
+       $cur.css({
+					right: rightX
+			})
+            if ( parseInt($cur.css('right')) < 0) {
+                $cur.css({
+									right: 0
+			})
+						}
+           else  if (parseInt($cur.css('right')) > 208) {
+                $cur.css({
+									right: '208px'
+								})
+            }
+						Mymusic.volume=parseFloat(rightX/208);
+        }
+        document.onmouseup = function (event) {
+            document.onmouseup = null;
+            document.onmousemove = null;
+        }
+	
+})
+if(myMusic.ended){
+	getmusic();
+}
+function playTime(time){
+	if(time<10){
+		time='0'+time
+	}else{
+		time=time
+	}
+}
+var $timePoint=$('.time-point');
+$timePoint.click(function(){
+	var songDuration=myMusic.duration;
+	var songM=parseInt(songDuration/60);
+	var songS=parseInt(songDuration%60);
+	$('.stop-time').text((playTime(songM)+':'+playTime(songS)))
 })

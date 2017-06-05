@@ -136,6 +136,7 @@ ul,li {
 .sound-control {
 	position: absolute;
 	top: 16px;
+	z-index: 11;
 	left: 200px;
 	width: 210px;
 	height: 4px;
@@ -144,10 +145,43 @@ ul,li {
 }
 .sound-control .sound-point {
 	position: absolute;
-	top: -2px;
+	top: -3px;
 	right: 0;
-	width: 8px;
-	height: 8px;
+	width: 10px;
+	height: 10px;
 	background: rgba(255,255,255,1);
 	border-radius: 50%;
+}
+/* 进度条 */
+.time-line {
+	position: absolute;
+	bottom: 30px;
+	left: 50%;
+	transform: translateX(-50%);
+	width: 360px;
+	height: 4px;
+	border-radius: 2px;
+	background: #fff;
+	
+}
+.time-line .song-time {
+	position: absolute;
+	top: -30px;
+	color: white;
+	font-size: 12px;
+}
+.time-line .start-time {
+	left: 0;
+}
+.time-line .stop-time {
+	right: 0;
+}
+.time-line  .time-point {
+	position: absolute;
+	top: 0px;
+	left: 0;
+	width: 4px;
+	height: 4px;
+	border-radius: 100%;
+	background: #000;
 }
