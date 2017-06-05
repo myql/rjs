@@ -53,7 +53,7 @@ function getChannel(){
 getChannel()
 function getmusic(){
 	$.ajax({
-		url:'http://api.jirengu.com/fm/getSong.php',
+		url:'//api.jirengu.com/fm/getSong.php',
 		dataType: 'json',
 		type: 'get',
 		data: {
@@ -81,7 +81,7 @@ function getmusic(){
 var myAudio=$('audio')[0]
 function getLyrics(){
 	var sid=$('audio').attr('sid');
-	$.get('http://api.jirengu.com/fm/getLyric.php',{sid:sid},function(lyr){
+	$.get('//api.jirengu.com/fm/getLyric.php',{sid:sid},function(lyr){
 		var lyr=JSON.parse(lyr);
 		if(!!lyr.lyric){
 		$('.music-lyric .lyric').empty();
