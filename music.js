@@ -34,7 +34,7 @@ function pause() {
 }
 function getChannel(){
 	$.ajax({
-		url:'//api.jirengu.com/fm/getChannels.php',
+		url:'http://api.jirengu.com/fm/getChannels.php',
 		dataType: 'json',
 		type: 'get',
 		success: function(response){
@@ -45,7 +45,6 @@ function getChannel(){
 			$('.record').text(channelname);
 			$('.record').attr('title',channelname);
 			$('.record').attr('data-id',channelId);
-			console.log($('.record').attr('data-id'))
 			getmusic();
 		}
 	})
@@ -53,7 +52,7 @@ function getChannel(){
 getChannel()
 function getmusic(){
 	$.ajax({
-		url:'//api.jirengu.com/fm/getSong.php',
+		url:'http://api.jirengu.com/fm/getSong.php',
 		dataType: 'json',
 		type: 'get',
 		data: {
@@ -81,7 +80,7 @@ function getmusic(){
 var myAudio=$('audio')[0]
 function getLyrics(){
 	var sid=$('audio').attr('sid');
-	$.get('//api.jirengu.com/fm/getLyric.php',{sid:sid},function(lyr){
+	$.get('http://api.jirengu.com/fm/getLyric.php',{sid:sid},function(lyr){
 		var lyr=JSON.parse(lyr);
 		if(!!lyr.lyric){
 		$('.music-lyric .lyric').empty();
@@ -210,7 +209,15 @@ setInterval(function(){
 	getmusic();	
 	}
 },1000)
-	
-
+var a=0;
+$('.nav').click(function(){
+	a++;
+	if(a%2===0){
+		$('.music-lyric').removeClass('inactive');
+	}
+	else {
+		$('.music-lyric').addClass('inactive');
+	}
+})
 
 	

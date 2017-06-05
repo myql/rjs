@@ -39,7 +39,7 @@ ul,li {
 }
 .main .nav i{
 	font-size: 30px;
-	color: #c7ccbb;
+	color: #fff;
 }
 .main .sound i {
 	font-size: 30px;
@@ -188,4 +188,7 @@ ul,li {
 .control .back i {
 	font-size: 40px;
 	line-height: 30px;
+}
+.inactive {
+	display: none;
 }
