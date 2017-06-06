@@ -220,4 +220,4 @@ $('.nav').click(function(){
 	}
 })
 
-	
+	$(document).ready(getChannel())
