@@ -36,7 +36,7 @@ function getChannel(){
 	$.ajax({
 		url:'http://api.jirengu.com/fm/getChannels.php',
 		dataType: 'json',
-		type: 'get',
+		type: 'post',
 		success: function(response){
 			var  channels=response.channels;
 			var num=Math.floor(Math.random()*channels.length);
@@ -54,7 +54,7 @@ function getmusic(){
 	$.ajax({
 		url:'http://api.jirengu.com/fm/getSong.php',
 		dataType: 'json',
-		type: 'get',
+		type: 'post',
 		data: {
 			'channel': $('.record').attr('data-id')
 		},
@@ -80,7 +80,7 @@ function getmusic(){
 var myAudio=$('audio')[0]
 function getLyrics(){
 	var sid=$('audio').attr('sid');
-	$.get('http://api.jirengu.com/fm/getLyric.php',{sid:sid},function(lyr){
+	$.post('http://api.jirengu.com/fm/getLyric.php',{sid:sid},function(lyr){
 		var lyr=JSON.parse(lyr);
 		if(!!lyr.lyric){
 		$('.music-lyric .lyric').empty();
@@ -168,12 +168,12 @@ $soundPoint.on('mousedown',function(event){
 var $timePoint=$('.time-point');
 var $timeLine=$('.time-line');
 function songTime(){
-	var songDuration=myMusic.duration;
-	var songM=parseInt(songDuration/60);
-	var songS=parseInt(songDuration%60);
 	setTimeout(function(){
+		var songDuration=myMusic.duration;
+		var songM=parseInt(songDuration/60);
+		var songS=parseInt(songDuration%60);
 		$('.stop-time').text((playTime(songM)+':'+playTime(songS)))
-	},1000)
+	},2000)
 	t=setInterval(function(){
 	var songTime=$('.start-time').text();
 	var timeArray=songTime.split(':');
@@ -196,9 +196,10 @@ function setTime(){
 		$('.start-time').text(nowText)
 }
 $timeLine.click(function(event){
-	var lineX=event.clientX;
+	var lineX=event.offsetX;
+	console.log(lineX)
 	var songDuration=myMusic.duration;
-	var nowTime=(lineX-205)/360*songDuration;
+	var nowTime=(lineX)/360*songDuration;
 	myMusic.currentTime=nowTime;
 	setTime()
 	getLyrics()
