@@ -2,18 +2,81 @@
  <head>
   <script type="application/javascript">
     function draw() {
-			vat canvas=document.getElementById('canvas');
+			var canvas=document.getElementById('canvas');
 			if(canvas.getContext){
 				var ctx=canvas.getContext('2d');
 				ctx.beginPath();
-				ctx.moveTo(100,100);
+				var arcX=300,arcY=350,radius=200;
+				ctx.arc(arcX,arcY,radius,0,2*Math.PI);
+				ctx.stroke();
+				var sides=8;
+				var e=180/sides,
+				x=new Array(),
+				y=new Array(),
+				x1=new Array(),
+				y1=new Array();
+				var num=Math.floor(radius/5);
+				for(var i=0;i<=sides;i++){
+					x[i]=new Array();
+					x1[i]=new Array();
+					y[i]=new Array();
+					y1[i]=new Array();
+				}
+				function drawEdge(){
+				ctx.beginPath();
+					for(radius1=radius;radius1>0;radius1=radius1-num){
+				ctx.moveTo(arcX+radius1*Math.cos(0),arcY+radius1*Math.sin(0))
+					for(var i=0;i<=sides;i++){
+						x[i][radius1]=arcX+radius1*Math.cos(2*Math.PI/sides*i)
+						y[i][radius1]=arcY+radius1*Math.sin(2*Math.PI/sides*i)
+					ctx.lineTo(x[i][radius1],y[i][radius1]);
+					}
+				}
+				ctx.closePath();
+				ctx.stroke();
+				}
+				drawEdge()
 				
+				
+				function drawLine(){
+				ctx.beginPath();
+					for(var i=0;i<=sides;i++){
+						for(radius1=radius;radius1>0;radius1=radius1-num){
+						ctx.moveTo(arcX+radius*Math.cos(2*Math.PI/sides*i),arcY+radius*Math.sin(2*Math.PI/sides*i))
+							x1[i][radius1]=arcX+radius1*Math.cos(2*Math.PI/sides*i)
+							y1[i][radius1]=arcY+radius1*Math.sin(2*Math.PI/sides*i)
+							ctx.lineTo(x1[i][radius1],y1[i][radius1]);
+					}
+				}
+				ctx.closePath();
+				ctx.stroke();
+				}
+				drawLine()
+				
+				
+				function fillImage(){
+					ctx.beginPath();
+					ctx.fillStyle="rgba(0,0,255,0.5)"
+					ctx.moveTo(x[0][radius-num*2],y[0][radius-num*2])
+					ctx.lineTo(x1[1][radius-num*2+10],y1[1][radius-num*2+10])
+					ctx.lineTo(x1[2][radius-num],y1[2][radius-num])
+					ctx.lineTo(x1[3][radius-num],y1[3][radius-num])
+					ctx.lineTo(x1[4][radius-num*2],y1[4][radius-num*2])
+					ctx.lineTo(x1[5][radius-num*3],y1[5][radius-num*3])
+					ctx.lineTo(x1[6][radius-num],y1[6][radius-num])
+					ctx.lineTo(x1[7][radius-num],y1[7][radius-num])
+					ctx.closePath()
+					ctx.fill()
+					ctx.font = "14px serif";
+					ctx.strokeStyle="#555"
+					ctx.strokeText("Hello world",x[0][radius]+10,y[0][radius]);
+				}
+				fillImage()
 			}
-			
 		}
   </script>
  </head>
- <body onload="draw();">
-   <canvas id="canvas" width="150" height="150"></canvas>
+ <body onload="draw()">
+   <canvas id="canvas" width="1000" height="1000"></canvas>
  </body>
 </html>
