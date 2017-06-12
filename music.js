@@ -34,7 +34,7 @@ function pause() {
 }
 function getChannel(){
 	$.ajax({
-		url:'http://api.jirengu.com/fm/getChannels.php',
+		url:'https://jirenguapi.applinzi.com/fm/getChannels.php',
 		dataType: 'json',
 		type: 'post',
 		success: function(response){
@@ -52,7 +52,7 @@ function getChannel(){
 getChannel()
 function getmusic(){
 	$.ajax({
-		url:'http://api.jirengu.com/fm/getSong.php',
+		url:'https://jirenguapi.applinzi.com/fm/getSong.php',
 		dataType: 'json',
 		type: 'post',
 		data: {
@@ -80,7 +80,7 @@ function getmusic(){
 var myAudio=$('audio')[0]
 function getLyrics(){
 	var sid=$('audio').attr('sid');
-	$.post('http://api.jirengu.com/fm/getLyric.php',{sid:sid},function(lyr){
+	$.post('https://jirenguapi.applinzi.com/fm/getLyric.php',{sid:sid},function(lyr){
 		var lyr=JSON.parse(lyr);
 		if(!!lyr.lyric){
 		$('.music-lyric .lyric').empty();
