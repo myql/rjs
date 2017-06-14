@@ -1,4 +1,10 @@
 var myMusic=$('audio')[0];
+var channelname=new Array();
+var $mainChannel=$('.main-channel')
+var $channelList=$('.channel-list')
+var $smallBar=$('.small-bar')
+var $channelList=$('.channel-list')
+var $scrollBar=$('scrollbar')
 function playTime(time){
 	if(time<10){
 		time='0'+time
@@ -16,10 +22,10 @@ $('.play').click(function(){
 	}
 })
 $('.forward').click(function(){
-	getmusic()
+	getmusic()	
 })
 $('.back').click(function(){
-	getChannel();
+	getmusic()
 })
 function play(){
 	myMusic.play();
@@ -36,16 +42,31 @@ function getChannel(){
 	$.ajax({
 		url:'https://jirenguapi.applinzi.com/fm/getChannels.php',
 		dataType: 'json',
-		type: 'post',
+		type: 'get',
 		success: function(response){
 			var  channels=response.channels;
-			var num=Math.floor(Math.random()*channels.length);
-			var channelname=channels[num].name;
+			channelname[0]=channels[0].name;
+			var sing='<li>'+channelname[0]+'</li>';
+			for(var i=1;i<channels.length;i++){
+				channelname[i]=channels[i].name;
+				sing=sing+'<li>'+channelname[i]+'</li>';
+			}
+			var num=Math.floor(Math.random()*channels.length)
 			var channelId=channels[num].channel_id;
-			$('.record').text(channelname);
-			$('.record').attr('title',channelname);
-			$('.record').attr('data-id',channelId);
-			getmusic();
+				$('.record').text(channelname[num]);
+				$('.record').attr('title',channelname[num]);
+				$('.record').attr('data-id',channelId);
+				getmusic();
+			$mainChannel.html(sing)
+			$mainChannel.children().click(function(){
+				var idx=$(this).index();
+				var channelId=channels[idx].channel_id;
+				$('.record').text(channelname[idx]);
+				$('.record').attr('title',channelname[idx]);
+				$('.record').attr('data-id',channelId);
+				getmusic();
+			})
+			
 			// songTime()
 		}
 	})
@@ -54,7 +75,7 @@ function getmusic(){
 	$.ajax({
 		url:'https://jirenguapi.applinzi.com/fm/getSong.php',
 		dataType: 'json',
-		type: 'post',
+		type: 'get',
 		data: {
 			'channel': $('.record').attr('data-id')
 		},
@@ -73,6 +94,7 @@ function getmusic(){
 					$('.main-image').attr('src',bgPic);
 					$('.main-music').text(title);
 					$('.music-singer').text(author);
+					$('.fm').attr('data-id',sid)
 					play();
 					getLyrics();
 					songTime()
@@ -86,7 +108,7 @@ function getmusic(){
 var myAudio=$('audio')[0]
 function getLyrics(){
 	var sid=$('audio').attr('sid');
-	$.post('https://jirenguapi.applinzi.com/fm/getLyric.php',{sid:sid},function(lyr){
+	$.get('https://jirenguapi.applinzi.com/fm/getLyric.php',{sid:sid},function(lyr){
 		var lyr=JSON.parse(lyr);
 		if(!!lyr.lyric){
 		$('.music-lyric .lyric').empty();
@@ -219,18 +241,30 @@ $timeLine.click(function(event){
 })
 setInterval(function(){
 	if(myMusic.currentTime==myMusic.duration){
-	getmusic();	
+	myMusic.play();	
 	}
 },100)
 var a=0;
 $('.nav').click(function(){
-	a++;
-	if(a%2===0){
-		$('.music-lyric').removeClass('inactive');
-	}
-	else {
-		$('.music-lyric').addClass('inactive');
-	}
+	
 })
-
+$smallBar.mousedown(function(event){
+	var $cur=$(this)
+	startY=event.clientY
+	$(document).mousemove(function(e){
+		var diff=e.clientY-startY
+		$cur.css({
+			top: diff
+		})
+		$mainChannel.css({
+			top: -diff
+		})
+	})
+	$(document).mouseup(function(){
+	$(this).off('mousemove mouseup');
+	this.releaseCapture && this.releaseCapture();
+	})
+	this.setCapture && this.setCapture();
+})
 	$(document).ready(getChannel())
+

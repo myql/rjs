@@ -4,6 +4,7 @@
 	box-sizing: border-box;
 	cursor: pointer;
 }
+
 .clearfix:after {
 	content: '';
 	display: block;
@@ -40,6 +41,38 @@ ul,li {
 .main .nav i{
 	font-size: 30px;
 	color: #fff;
+}
+body{
+	scrollbar-face-color: #000;
+}
+.main .channel-list{
+	position: relative;
+	z-index: 99;
+	width: 80px;
+	height: 300px;
+	overflow: hidden;
+	
+}
+.main .main-channel{
+	position: absolute;
+	top: 0;
+	left: 0;
+}
+.main .bar-line {
+	position: absolute;
+	right: 0;
+	top: 0;
+	height: 300px;
+	width: 8px;
+	background: #ccc;
+}
+.main .small-bar {
+	position: absolute;
+	right: 0;
+	top: 0;
+	height: 50px;
+	width: 8px;
+	background: #333;
 }
 .main .sound i {
 	font-size: 30px;
