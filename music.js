@@ -46,7 +46,7 @@ function getChannel(){
 			$('.record').attr('title',channelname);
 			$('.record').attr('data-id',channelId);
 			getmusic();
-			songTime()
+			// songTime()
 		}
 	})
 }
@@ -74,7 +74,11 @@ function getmusic(){
 					$('.main-music').text(title);
 					play();
 					getLyrics();
-					
+					songTime()
+					$timePoint.css({
+						width: 0
+					})
+					$('.stop-time').text('00:00')
 		}
 	})
 }
