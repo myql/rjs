@@ -78,6 +78,16 @@ ul,li {
 	font-size: 14px;
 	color: #fff;
 }
+.main .music-singer {
+	position: absolute;
+	top: 210px;
+	left: 100px;
+	margin-left: -100px;
+	width: 200px;
+	text-align: center;
+	font-size: 12px;
+	color: #fff;
+}
  .music-lyric{
  	position: absolute;
  	left: 180px;

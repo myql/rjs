@@ -72,6 +72,7 @@ function getmusic(){
 					$('audio').attr('src',url);
 					$('.main-image').attr('src',bgPic);
 					$('.main-music').text(title);
+					$('.music-singer').text(author);
 					play();
 					getLyrics();
 					songTime()
@@ -220,7 +221,7 @@ setInterval(function(){
 	if(myMusic.currentTime==myMusic.duration){
 	getmusic();	
 	}
-},1000)
+},100)
 var a=0;
 $('.nav').click(function(){
 	a++;
